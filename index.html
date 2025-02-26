@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchOff.fun (Test Version)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure mobile view looks like desktop view */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header, main, footer {
+            width: 100%;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0; /* Increased padding to lower the section by 50px */
+        }
+        .token-creator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-field {
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .create-btn {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #cb55b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .create-btn:hover {
+            background-color: #843679;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        .stat-box {
+            text-align: center;
+        }
+        .connect-wallet-btn {
+            padding: 10px 20px;
+            background-color: #cb55b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .connect-wallet-btn:hover {
+            background-color: #843679;
+        }
+    </style>
+</head>
+<body>
+    <div id="how-it-works-popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgb(14, 13, 13); display: flex; align-items: center; justify-content: center; z-index: 1000; flex-direction: column; text-align: center;">
+        <h2>How it works</h2>
+        <p>Launch ensures that all created tokens <br>
+             are safe to trade <br>
+            through a secure and battle-tested <br>
+            token launching system. <br>
+            Each coin on Launch is a fair-launch with 
+            no presale and no team allocation.<br>
+            <br>
+            <br>
+            Here's how it works:
+            <ol style="text-align: left; max-width: 600px;">
+            <li>Pick a coin that you like</li>
+            <li>Buy the coin on the bonding curve</li>
+            <li>Sell at any time to lock in your profits or losses</li>
+            <li>When enough people buy on the bonding curve it reaches a market cap of $100k</li>
+            <li>$17k of liquidity is then deposited in Raydium and burned</li>
+        </ol>
+        <p>Privacy Policy | Terms of Service | Fees</p>
+        <p>By clicking this button you agree to the terms and conditions and certify that you are over 18</p> <br>
+        <button onclick="closePopup()">I'm ready to Launch</button>
+    </div>
+    <header>
+        <div class="container">
+            <div class="logo">LaunchOff.Fun</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Create Token</a></li>
+                    <li><a href="/MemeScope.html">MemeScope</a></li>
+                    <li><a href="#">Fees</a></li>
+                </ul>
+            </nav>
+            <button class="connect-wallet-btn" onclick="connectWallet()">Connect Wallet</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Create Your Meme Coin</h1>
+                <p>Launch your token in seconds and join the fun!</p>
+                <div class="token-creator">
+                    <input type="text" id="token-name" placeholder="Token Name" class="input-field">
+                    <input type="text" id="token-symbol" placeholder="Token Symbol" class="input-field">
+                    <textarea id="token-description" placeholder="Description" class="input-field"></textarea>
+                    <button class="create-btn" onclick="createToken()">Create Token</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stat-box">
+                    <h3>1000+</h3>
+                    <p>Tokens Created</p>
+                </div>
+                <div class="stat-box">
+                    <h3>$500K+</h3>
+                    <p>Market Cap</p>
+                </div>
+                <div class="stat-box">
+                    <h3>5000+</h3>
+                    <p>Happy Users</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LaunchOff.Fun. For testing purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function createToken() {
+            const name = document.getElementById('token-name').value.trim();
+            const symbol = document.getElementById('token-symbol').value.trim().toUpperCase();
+            const description = document.getElementById('token-description').value.trim();
+            const supply = parseInt(document.getElementById('token-supply')?.value || 1000000); // Optional, default 1M
+            const decimals = parseInt(document.getElementById('token-decimals')?.value || 6);    // Optional, default 6
+    
+            // Basic validation
+            if (!name || !symbol) {
+                alert('Token name and symbol are required.');
+                return;
+            }
+    
+            console.log('Creating token with:', { name, symbol, description, supply, decimals });
+    
+            try {
+                // Call backend endpoint that uses Solana CLI and spl-token
+                const response = await fetch('http://localhost:3000/create_token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, symbol, description, supply, decimals })
+                });
+    
+                const result = await response.json();
+                if (response.ok) {
+                    alert(`Token created: ${result.name} (${result.symbol})\nAddress: ${result.tokenAddress}\nSupply: ${result.supply} tokens`);
+                } else {
+                    alert(`Error: ${result.error || 'Token creation failed'}`);
+                }
+            } catch (error) {
+                console.error('Error creating token:', error);
+                alert('An error occurred while creating the token. Please try again.');
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('how-it-works-popup').style.display = 'none';
+        }
+
+        function connectWallet() {
+            alert('Connect Wallet functionality is not implemented yet.');
+        }
+    </script>
+</body>
+</html>

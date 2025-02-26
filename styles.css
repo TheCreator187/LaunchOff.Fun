@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    background-image: url('/Assests/wallpaper.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* Header Styles */
+header {
+    background-color: #2a2a2a;
+    opacity: 0.9;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #00ffcc;
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: yellow;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.token-creator {
+    background-color: #2a2a2a;
+    opacity: 0.9;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.input-field::placeholder {
+    color: #aaa;
+}
+
+textarea.input-field {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.create-btn {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-btn:hover {
+    background-color: #00ccaa;
+}
+
+/* Stats Section */
+.stats {
+    padding: 4rem 0;
+    background-color: #222;
+    opacity: .9;
+    margin-top: 200px;
+}
+
+.stats .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+.stat-box h3 {
+    font-size: 2rem;
+    color: #00ffcc;
+}
+
+.stat-box p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #2a2a2a;
+    opacity: 0.9;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .stats .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

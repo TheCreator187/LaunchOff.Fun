@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Coin Scope</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d001a, #1a0033);
+            font-family: 'Courier New', monospace;
+            color: #00ffcc;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px #00ffcc;
+            animation: glitch 2s linear infinite;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .coin-card {
+            background: rgba(0, 255, 204, 0.1);
+            border: 2px solid #00ffcc;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .coin-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+            background: rgba(0, 255, 204, 0.2);
+        }
+
+        .coin-name {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        .price {
+            font-size: 1.1em;
+            color: #00ff00;
+            margin: 5px 0;
+        }
+
+        .details {
+            font-size: 0.9em;
+            color: #66ffff;
+            line-height: 1.4;
+        }
+
+        .ticker {
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            color: #00ffcc;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>MemeScope</h1>
+    <div class="grid-container">
+        <div class="coin-card">
+            <div class="coin-name">DogeKing</div>
+            <div class="price">$0.045</div>
+            <div class="details">Market Cap: $45M<br>Volume: $2.1M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">ShibaRocket</div>
+            <div class="price">$0.00089</div>
+            <div class="details">Market Cap: $12M<br>Volume: $890K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">MoonMeow</div>
+            <div class="price">$0.013</div>
+            <div class="details">Market Cap: $28M<br>Volume: $1.5M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">PepeLord</div>
+            <div class="price">$0.0072</div>
+            <div class="details">Market Cap: $19M<br>Volume: $670K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">WoofCoin</div>
+            <div class="price">$0.056</div>
+            <div class="details">Market Cap: $62M<br>Volume: $3.2M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">CatZilla</div>
+            <div class="price">$0.0023</div>
+            <div class="details">Market Cap: $8M<br>Volume: $450K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">MemeLord</div>
+            <div class="price">$0.091</div>
+            <div class="details">Market Cap: $87M<br>Volume: $4.8M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">FrogToken</div>
+            <div class="price">$0.00045</div>
+            <div class="details">Market Cap: $5M<br>Volume: $230K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">BarkBucks</div>
+            <div class="price">$0.034</div>
+            <div class="details">Market Cap: $39M<br>Volume: $1.9M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">PawPower</div>
+            <div class="price">$0.018</div>
+            <div class="details">Market Cap: $25M<br>Volume: $1.1M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">LolCoin</div>
+            <div class="price">$0.067</div>
+            <div class="details">Market Cap: $71M<br>Volume: $3.9M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">KekToken</div>
+            <div class="price">$0.0098</div>
+            <div class="details">Market Cap: $15M<br>Volume: $780K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">ZoomerCash</div>
+            <div class="price">$0.023</div>
+            <div class="details">Market Cap: $33M<br>Volume: $1.6M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">GigaMeme</div>
+            <div class="price">$0.00012</div>
+            <div class="details">Market Cap: $3M<br>Volume: $150K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">TrollBux</div>
+            <div class="price">$0.041</div>
+            <div class="details">Market Cap: $48M<br>Volume: $2.3M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">WagmiCoin</div>
+            <div class="price">$0.075</div>
+            <div class="details">Market Cap: $82M<br>Volume: $4.5M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">YoloBits</div>
+            <div class="price">$0.0037</div>
+            <div class="details">Market Cap: $10M<br>Volume: $510K</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">SusToken</div>
+            <div class="price">$0.029</div>
+            <div class="details">Market Cap: $36M<br>Volume: $1.8M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">BasedBux</div>
+            <div class="price">$0.052</div>
+            <div class="details">Market Cap: $59M<br>Volume: $2.9M</div>
+        </div>
+        <div class="coin-card">
+            <div class="coin-name">HypeCoin</div>
+            <div class="price">$0.088</div>
+            <div class="details">Market Cap: $95M<br>Volume: $5.2M</div>
+        </div>
+    </div>
+    <div class="ticker">
+        <div class="ticker-content">
+            DogeKing: $0.045 | ShibaRocket: $0.00089 | MoonMeow: $0.013 | PepeLord: $0.0072 | WoofCoin: $0.056 | CatZilla: $0.0023 | MemeLord: $0.091 | FrogToken: $0.00045 | BarkBucks: $0.034 | PawPower: $0.018 | LolCoin: $0.067 | KekToken: $0.0098 | ZoomerCash: $0.023 | GigaMeme: $0.00012 | TrollBux: $0.041 | WagmiCoin: $0.075 | YoloBits: $0.0037 | SusToken: $0.029 | BasedBux: $0.052 | HypeCoin: $0.088
+        </div>
+    </div>
+</body>
+</html>
