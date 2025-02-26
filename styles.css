@@ -159,7 +159,7 @@ textarea.input-field {
 
 /* Background Section */
 .background-section {
-    background-image: url('/Assests/pexels-krisof-1252890.jpg');
+    background-image: url('/Assests/jeremy-thomas-E0AHdsENmDg-unsplash.jpg'); /* Update background image */
     background-size: cover;
     background-position: center;
     padding: 50px 0; /* Decrease padding to make the section lower */
