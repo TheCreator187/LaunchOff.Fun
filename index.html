@@ -28,7 +28,7 @@
         header {
             position: sticky;
             top: 0;
-            background: #fff;
+            background: #383636;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 5px 0; /* Reduced padding */
@@ -172,6 +172,12 @@
                 width: 100%;
                 box-sizing: border-box;
             }
+            .image-placeholder {
+                background-color: #444; /* Change background color */
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -232,6 +238,14 @@
                 </div>
             </div>
         </section>
+        <section class="background-section">
+            <div class="container">
+
+                <div class="overlay-image">
+                    <img src="/Assests/wallpaper-removebg-preview.png" alt="Overlay Image">
+                </div>
+            </div>
+        </section>
 
         <section class="stats">
             <div class="container">
@@ -247,6 +261,8 @@
                     <h3>5000+</</h3>
                     <p>Happy Users</p>
                 </div>
+            </div>
+
             </div>
         </section>
     </main>
