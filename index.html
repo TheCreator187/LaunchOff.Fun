@@ -75,6 +75,17 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 24px; /* Adjust height to fit the lines */
+        }
+        .dropbtn span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: white;
         }
         .dropbtn:hover {
             background-color: #555;
@@ -192,7 +203,11 @@
             <div class="logo">LaunchOff.Fun</div>
             <nav>
                 <div class="dropdown">
-                    <button class="dropbtn">Menu</button>
+                    <button class="dropbtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                     <div class="dropdown-content">
                         <a href="#">Create Token</a>
                         <a href="/MemeScope.html">MemeScope</a>
