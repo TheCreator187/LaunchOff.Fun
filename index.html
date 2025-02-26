@@ -31,23 +31,37 @@
             background: #fff;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
+            padding: 5px 0; /* Reduced padding */
         }
         nav ul {
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-            padding: 0;
-            flex-wrap: wrap;
+            display: none; /* Hide the original nav links */
         }
-        nav ul li {
-            margin: 5px 10px;
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
-        nav ul li a {
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            font-size: 14px;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
         }
         .hero {
             text-align: center;
@@ -153,11 +167,14 @@
         <div class="container">
             <div class="logo">LaunchOff.Fun</div>
             <nav>
-                <ul>
-                    <li><a href="#">Create Token</a></li>
-                    <li><a href="/MemeScope.html">MemeScope</a></li>
-                    <li><a href="#">Fees</a></li>
-                </ul>
+                <div class="dropdown">
+                    <button class="dropbtn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Create Token</a>
+                        <a href="/MemeScope.html">MemeScope</a>
+                        <a href="#">Fees</a>
+                    </div>
+                </div>
             </nav>
             <button class="connect-wallet-btn" onclick="connectWallet()">Connect Wallet</button>
         </div>
