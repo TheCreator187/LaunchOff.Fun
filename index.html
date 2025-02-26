@@ -31,6 +31,7 @@
             background: #fff;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
         }
         nav ul {
             display: flex;
@@ -46,10 +47,17 @@
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            font-size: 14px;
         }
         .hero {
             text-align: center;
-            padding: 50px 0;
+            padding: 30px 0;
+        }
+        .hero h1 {
+            font-size: 24px;
+        }
+        .hero p {
+            font-size: 16px;
         }
         .token-creator {
             display: flex;
@@ -81,11 +89,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50px 0;
+            padding: 30px 0;
         }
         .stat-box {
             text-align: center;
             margin: 10px 0;
+        }
+        .stat-box h3 {
+            font-size: 20px;
+        }
+        .stat-box p {
+            font-size: 14px;
         }
         .connect-wallet-btn {
             padding: 10px 20px;
@@ -105,6 +119,11 @@
                 justify-content: space-around;
             }
         }
+        #how-it-works-popup ol {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -119,7 +138,7 @@
             <br>
             <br>
             Here's how it works:
-            <ol style="text-align: left; max-width: 600px;">
+            <ol>
             <li>Pick a coin that you like</li>
             <li>Buy the coin on the bonding curve</li>
             <li>Sell at any time to lock in your profits or losses</li>
@@ -169,7 +188,7 @@
                     <p>Market Cap</p>
                 </div>
                 <div class="stat-box">
-                    <h3>5000+</h3>
+                    <h3>5000+</</h3>
                     <p>Happy Users</p>
                 </div>
             </div>
